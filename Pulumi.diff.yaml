@@ -1,0 +1,4 @@
+config:
+  azure-native:location: westus
+  azure-native:subscriptionId:
+    secure: AAABAKdH17Jg/KukS8uUUFuEG5uCbjuAkPoiQ80PQ7o4vAvGH6HyryiwlfJwJgFXazcAUQfoX0ClKygyHVkxcihUHCA=
