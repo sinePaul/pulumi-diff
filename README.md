@@ -26,7 +26,7 @@ When trying to update the stack again, pulumi tries to delete the properties tha
 ![image](https://github.com/sinePaul/pulumi-diff/assets/94847275/eb2a9bae-76d2-4920-904d-af7d50027936)
 
 #### Conclusion
-I tried adding the properties to the container to avoid unwanted diff  
+
 
 #### From `pulumi about`
 
