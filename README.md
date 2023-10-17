@@ -25,8 +25,13 @@ When trying to update the stack again, pulumi tries to delete the properties tha
 
 ![image](https://github.com/sinePaul/pulumi-diff/assets/94847275/eb2a9bae-76d2-4920-904d-af7d50027936)
 
-#### Conclusion
 
+#### Conclusion
+When refreshing and updating our stack again, we will always have those properties in the diff. Those are optionals properties that we do not set in the code. 
+We cannot use `IgnoreChanges` in `CustomResourceOptions` since the change is not coming from the code. 
+
+We need to avoid unnecessary diffs to automate our workflow in CICD. 
+In this example, we would like to be able to run this command without error `pulumi up -r --expect-no-changes -y`
 
 #### From `pulumi about`
 
