@@ -1,17 +1,15 @@
 # pulumi-diff
-Overview of unwanted large pulumi diff
+Overview of unwanted large pulumi diff.
 The code used here never change between the operations
+This example is using a storage account, a blob container and a blob but this behavior is happening on many resources
 
-From `pulumi about`
-![image](https://github.com/sinePaul/pulumi-diff/assets/94847275/5b9fec9c-cbdd-405c-b503-e3ad65cf2e18)
-
-
-1. `pulumi up`
+### 1. `pulumi up`
 
 ![image](https://github.com/sinePaul/pulumi-diff/assets/94847275/0408054f-3b67-4643-9320-0ce5c89ff2a0)
 
-We can run any other `pulumi again` wihtout having any diff 
-2. `pulumi refresh`
+We can run any other `pulumi up` again wihtout having any diff 
+
+### 2. `pulumi refresh`
 
 The refresh command is importing lots of properties that cannot be edited from Pulumi
 ![image](https://github.com/sinePaul/pulumi-diff/assets/94847275/40ec5766-ce18-49b3-bd9c-c9ce4fa4dbd3)
@@ -19,8 +17,17 @@ The refresh command is importing lots of properties that cannot be edited from P
 ![image](https://github.com/sinePaul/pulumi-diff/assets/94847275/02d2b580-8541-4586-94ae-2976ec57675b)
 
 
-3. `pulumi up`
-When trying to update the stack again, we get 
+### 3. `pulumi up`
+
+When trying to update the stack again, pulumi tries to delete the properties that are bought by the refresh 
+
 ![image](https://github.com/sinePaul/pulumi-diff/assets/94847275/a8d5644c-4ac2-4987-bbe0-4f989d15ab03)
 
 ![image](https://github.com/sinePaul/pulumi-diff/assets/94847275/eb2a9bae-76d2-4920-904d-af7d50027936)
+
+#### Conclusion
+I tried adding the properties to the container to avoid unwanted diff  
+
+#### From `pulumi about`
+
+![image](https://github.com/sinePaul/pulumi-diff/assets/94847275/5b9fec9c-cbdd-405c-b503-e3ad65cf2e18)
